@@ -66,6 +66,77 @@ This page provides codes to enhance the efficency during an data analysis:
 |RSQLite|For working with SQLite databases|
 |bigrquery|Interface for Google BigQuery|
 
+# Simple Summary
+
+````r
+house_summary <- function(SalePrice) {
+  result <- list(
+    minimum = min(SalePrice, na.rm = TRUE),
+    maximum = max(SalePrice, na.rm = TRUE),
+    mean = mean(SalePrice, na.rm = TRUE),
+    median = median(SalePrice, na.rm = TRUE),
+    std_dev = sd(SalePrice, na.rm = TRUE)
+  )
+  
+  return(result)
+}
+````
+
+# Histogram
+
+````r
+ggplot(df, aes(x = SalePrice)) +
+  geom_histogram(binwidth = 10000, fill = "midnightblue", color = "white", alpha = 0.8) +
+  geom_density(aes(y = ..count..), color = "red", size = 1, linetype = "dashed") +  # Add a density curve
+  theme_minimal() +
+  labs(
+    title = "Distribution of Sale Prices",
+    x = "Sale Price",
+    y = "Count"
+  ) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),  # Center and style the title
+    axis.title = element_text(size = 12),  # Style axis labels
+    panel.grid.major = element_line(color = "gray80")  # Light grid lines for clarity
+  ) +
+  scale_x_continuous(labels = scales::comma)
+````
+
+# Scatter Plot
+````r
+ggplot(df, aes(x = Gr.Liv.Area, y = SalePrice)) +
+  geom_point(color = "midnightblue", alpha = 0.6, size = 2) +  # Scatter points with transparency
+  geom_smooth(method = "lm", color = "red", se = FALSE, linetype = "dashed") +  # Linear regression line
+  theme_minimal() +
+  labs(
+    title = "SAbove Ground Living Area vs. Sale Price",
+    x = "Above Ground Living Area",
+    y = "Sale Price"
+  ) +
+  theme(
+    plot.title = element_text(hjust = 0.5, face = "bold", size = 14),  # Center and bold the title
+    axis.title = element_text(size = 12),  # Style axis labels
+    panel.grid.major = element_line(color = "gray76")  # Soft grid lines for clarity
+````
+# Box Plot 
+````r
+ggplot(df, aes(x = Neighborhood, y = SalePrice, fill = Neighborhood)) +
+  geom_boxplot(outlier.colour = "black", outlier.size = 1, outlier.alpha = 0.6) +
+  theme_minimal() +
+  labs(
+    title = "Sale Prices across Neighborhoods",
+    x = "Neighborhood",
+    y = "Sale Price"
+  ) +
+  theme(
+    axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1, size = 9),  # Rotate x-axis labels
+    axis.text.y = element_text(size = 10),
+    legend.position = "none",  # Remove legend since it's redundant
+    plot.title = element_text(hjust = 0.5, face = "bold")  # Center and bold the title
+  ) +
+  scale_fill_manual(values = rep("red", length(unique(df$Neighborhood))))  # Set fill color
+````
+
 # Normal Distribution 
 
 ````R
