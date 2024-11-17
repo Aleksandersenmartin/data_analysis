@@ -1,5 +1,13 @@
 This page provides codes to enhance the efficency during an data analysis: 
-
+# Useful Packages
+|Package|Purpose|
+-----------------
+|dplyr|For data manipulation (filtering, selecting, summarizing, and mutating)|
+|tidyr|For reshaping and tidying datasets (e.g., pivoting, separating columns)|
+|data.table|High-performance data manipulation and aggregation|
+|janitor|For cleaning and organizing messy data (e.g., removing empty rows)|
+|lubridate|Simplifies working with dates and times|
+|stringr|For string manipulation (e.g., regex, string cleaning)|
 
 
 # Normal Distribution 
