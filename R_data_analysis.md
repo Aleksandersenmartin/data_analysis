@@ -1,7 +1,7 @@
 This page provides codes to enhance the efficency during an data analysis: 
 # Useful Packages
 |Package|Purpose|
------------------
+--------|-------|
 |dplyr|For data manipulation (filtering, selecting, summarizing, and mutating)|
 |tidyr|For reshaping and tidying datasets (e.g., pivoting, separating columns)|
 |data.table|High-performance data manipulation and aggregation|
