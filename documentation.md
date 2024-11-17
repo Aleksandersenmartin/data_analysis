@@ -172,5 +172,3 @@ Next Steps:
 - Refine churn prediction model using additional customer behavior data.
 - Test targeted marketing strategies based on insights.
 ````
-
-![image](https://github.com/user-attachments/assets/e89a1870-9fda-4e96-ab22-13a07a17f60f)
