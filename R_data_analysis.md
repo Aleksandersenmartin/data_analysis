@@ -21,6 +21,51 @@ This page provides codes to enhance the efficency during an data analysis:
 |lattice|For creating multipanel plots|
 |highcharter|For interactive and dynamic charts|
 
+## Statistical Analysis
+|Package|Purpose|
+|--------|-------|
+|stats|Built-in package for statistical tests (e.g., t-tests, ANOVA)|
+|MASS|Functions for linear and generalized linear models|
+|car|For hypothesis testing, ANOVA, and regression diagnostics|
+|lmtest|For linear model diagnostics (e.g., heteroskedasticity tests)|
+|survival|For survival analysis and Cox proportional hazards models|
+|multcomp|For multiple comparison testing|
+
+## Machine Learning and Modeling 
+|Package|Purpose|
+|--------|-------|
+|caret|Unified interface for machine learning algorithms and workflows|
+|randomForest|For building random forest models|
+|xgboost|For extreme gradient boosting (XGBoost)|
+|glmnet|For regularized regression (Lasso, Ridge)|
+|e1071|For SVMs, naive Bayes, and other ML models|
+|tidymodels|A suite of packages for modern ML workflows|
+
+## Exploratory Data Analysis (EDA)
+|Package|Purpose|
+|--------|-------|
+|skimr|For quick overviews of datasets (e.g., summary stats)|
+|DataExplorer|Automates EDA, creating summaries and visualizations|
+|GGally|Extends ggplot2 with scatterplot matrices and correlation plots|
+|corrplot|For visualizing correlation matrices|
+
+## Time Series Analysis
+|Package|Purpose|
+|--------|-------|
+|forecast|For ARIMA, ETS, and other time series models|
+|xts|For managing time series data|
+|zoo|For working with regular and irregular time series|
+|tseries|For time series tests (e.g., ADF, KPSS)|
+|prophet|For time series forecasting with a focus on seasonality|
+
+## Big Data and Databases 
+|Package|Purpose|
+|--------|-------|
+|sparklyr|Interface for Apache Spark in R for big data analysis|
+|DBI|Unified interface for database connections|
+|RSQLite|For working with SQLite databases|
+|bigrquery|Interface for Google BigQuery|
+
 # Normal Distribution 
 
 ````R
