@@ -34,6 +34,44 @@ ggplot(data = df, aes(x = age)) +
     legend.position = "
 none"
 ````
-### Ooutcome: 
+### Outcome: 
 
 ![image](https://github.com/user-attachments/assets/8892a51f-4fa8-4d27-af0c-a200b3e198ef)
+
+## Corelation and heatmaps: 
+
+````r
+Corelation:
+co <- colorRampPalette(c("red", "yellow", "darkgreen"))
+corr_male[is.na(corr_male)] <- 0  # Replace NA with 0
+corr_male[is.nan(corr_male)] <- 0  # Replace NaN with 0
+corr_male[is.infinite(corr_male)] <- 0 
+````
+````r
+Heatmap: 
+heatmap_male<- 
+  heatmap.2(corr_male, 
+          trace = "none", #Aviding the measure in the plot
+          dendrogram = "none", #Avoding much mess in the measure between the col
+          notecex  = 2.0,
+          col=co, #Defining the color         
+          margins = c(6.0,5.0), #Defining the wide of the plot 
+          Rowv = TRUE,
+          Colv = FALSE,
+          key = TRUE, #allow us to get the ledger color to be 
+          key.par = list(
+            mar = c(5, 1, 2, 2), 
+            las = 1),#To get the values in the value bar vertical and not horizontal 
+          srtCol = 45, #get the x labs to 45 degrees  
+          key.title = "Corelation", #the key title for measuring the values 
+          density.info = c("none"),
+          cexRow = 1.5, #The row font size 
+          cexCol =1.5, #The column font size 
+          main = "Heart Disease Corelation Matrix - Male" #The Title Name 
+          )
+
+````
+
+### Outcome: 
+
+![image](https://github.com/user-attachments/assets/0cefe1a6-4a50-4cbe-ab1e-0b0ad39f1dd1)
