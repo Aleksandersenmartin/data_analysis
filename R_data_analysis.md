@@ -3,7 +3,7 @@ This page provides codes to enhance the efficency during an data analysis:
 
 
 ## Normal Distribution 
-´´´´R
+´´´´r
 
 #Calculating and creating a histogram as a normal distribution for the Cholestrol of the survey 
 age_mean <- mean(df$age, na.rm = TRUE) #Calculating the mean
