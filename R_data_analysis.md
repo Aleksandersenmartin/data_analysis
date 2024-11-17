@@ -2,7 +2,7 @@ This page provides codes to enhance the efficency during an data analysis:
 
 
 
-## Normal Distribution 
+# Normal Distribution 
 
 ````R
 #Calculating and creating a histogram as a normal distribution for the Cholestrol of the survey 
@@ -38,7 +38,7 @@ none"
 
 ![image](https://github.com/user-attachments/assets/8892a51f-4fa8-4d27-af0c-a200b3e198ef)
 
-## Corelation and heatmaps: 
+# Corelation and heatmaps: 
 
 ````r
 Corelation:
@@ -75,4 +75,76 @@ heatmap_male<-
 ### Outcome: 
 
 ![image](https://github.com/user-attachments/assets/91411e59-4bf5-42d8-9699-057c3ad0a2bb)
+
+
+# Linear Regression 
+
+# Generalized Linear Regression 
+
+# Logistic Regression 
+
+# Confusion Matrix 
+
+When to use a confusion Matrix
+
+A confusion Matrix is used when evaluating the performance of a classification model, especially for binary or multiclass classification takes. It provides a detailed breakdown of the model's predictions compared to the actual outcomes, rather than a single metric like accuracy. 
+
+Use Cases: 
+
+1. Binary Classification :
+		a. Example: span detection (spam/not spam)
+2. Multiclass classification 
+		a. Examples :image recognition (cat/dog/bird), sentiment analysis ( positive/neutral/negative) 
+
+Why use it: 
+	- Detailed insight: it shows counts of true positives, true negatives, false positives, and false negatives, helping identify specific error made by the model. 
+	- Metric Calculation: Metrics like precision, recall, F1-Score, and accuracy are derived from the confusion matrix 
+	- Handling imbalanced data: useful when one class significantly outweight the other, where accuracy alone might be mislead 
+
+Structure of a Confusion Matrix: 
+
+For binary classification 
+
+Predicted: Positive	Predicted: Negative
+Actual: Positive	True Positives (TP)	False Negatives (FN)
+Actual: Negative 	False Positve (FP)	True Negative (TN) 
+
+Advantages of a confusion Matrix
+
+1. Clarity: 
+		a. Provides a granular view of model performance across classes 
+2. Error Analysis: 
+		a. Helps pinpoint where the model is failing (e.g., high false positives ro false negatives)
+3. Metrics Calculation:
+		a. Enables compution of various performance metrics tailored to the task
+
+ ````r
+		set.seed(4000)
+		index <- sample(1:nrow(df_log), size = 0.7 * nrow(df_log)) #70% for the training 
+		training_set <- df_log[index, ]
+		testing_set <- df_log[-index, ]
+	
+		actual_classes <- df_log$exang 
+		conf_matrix <- table(predict_ = predicted_classes, actual = actual_classes )
+		
+		print(conf_matrix)
+		
+		accuracy <- sum(diag(conf_matrix)) / sum(conf_matrix)
+		
+		# Precision
+		precision <- conf_matrix[2, 2] / sum(conf_matrix[2, ])
+		
+		# Recall
+		recall <- conf_matrix[2, 2] / sum(conf_matrix[, 2])
+		
+		# F1 Score
+		f1_score <- 2 * (precision * recall) / (precision + recall)
+		
+		# Display metrics
+		cat("Accuracy:", accuracy, "\n")
+		cat("Precision:", precision, "\n")
+		cat("Recall:", recall, "\n")
+		cat("F1 Score:", f1_score, "\n")
+		
+````
 
