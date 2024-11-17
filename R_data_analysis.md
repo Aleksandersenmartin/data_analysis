@@ -3,7 +3,8 @@ This page provides codes to enhance the efficency during an data analysis:
 
 
 ## Normal Distribution 
-´´´´r
+
+´´´´python
 
 #Calculating and creating a histogram as a normal distribution for the Cholestrol of the survey 
 age_mean <- mean(df$age, na.rm = TRUE) #Calculating the mean
@@ -33,5 +34,4 @@ ggplot(data = df, aes(x = age)) +
     axis.text.x = element_text(size = 10),
     legend.position = "
 none"
-
 ````
