@@ -1,5 +1,6 @@
 This page provides codes to enhance the efficency during an data analysis: 
 # Useful Packages
+## Data Manipulation and Cleaning 
 |Package|Purpose|
 --------|-------|
 |dplyr|For data manipulation (filtering, selecting, summarizing, and mutating)|
@@ -9,6 +10,16 @@ This page provides codes to enhance the efficency during an data analysis:
 |lubridate|Simplifies working with dates and times|
 |stringr|For string manipulation (e.g., regex, string cleaning)|
 
+## Data Visualization 
+|Package|Purpose|
+|--------|-------|
+|ggplot2|The most popular package for creating advanced and customizable plots|
+|plotly|For interactive visualizations (e.g., zoomable charts)|
+|cowplot|Enhances ggplot2 for combining multiple plots|
+|gridExtra|For arranging multiple plots on a grid|
+|ggpubr|Simplifies the creation of publication-ready plots|
+|lattice|For creating multipanel plots|
+|highcharter|For interactive and dynamic charts|
 
 # Normal Distribution 
 
