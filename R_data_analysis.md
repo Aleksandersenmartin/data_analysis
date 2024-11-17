@@ -34,3 +34,6 @@ ggplot(data = df, aes(x = age)) +
     legend.position = "
 none"
 ````
+### Ooutcome: 
+
+![image](https://github.com/user-attachments/assets/8892a51f-4fa8-4d27-af0c-a200b3e198ef)
